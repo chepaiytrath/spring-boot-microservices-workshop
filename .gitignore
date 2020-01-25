@@ -16,7 +16,6 @@ target/
 ### IntelliJ IDEA ###
 .idea
 *.iws
-*.iml
 *.ipr
 
 ### NetBeans ###
@@ -30,4 +29,3 @@ build/
 ### VS Code ###
 .vscode/
 /.idea/libraries/**
-/spring-boot-microservices-workshop.iml

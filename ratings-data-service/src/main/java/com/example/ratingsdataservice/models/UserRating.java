@@ -1,12 +1,13 @@
 package com.example.ratingsdataservice.models;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserRating {
+    private String userId;
     private List<Rating> userRating;
 }

@@ -1,4 +1,4 @@
-package com.example.ratingsdataservice.models;
+package com.example.movieinfoservice.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Rating {
+public class Movie {
     private String movieId;
-    private int rating;
+    private String name;
 }

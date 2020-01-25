@@ -1,13 +1,15 @@
-package com.example.movieinfoservice.models;
+package com.example.moviecatalogservice.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
-public class MovieSummary {
+public class Rating {
     private String movieId;
-    private String name;
+    private int rating;
 }

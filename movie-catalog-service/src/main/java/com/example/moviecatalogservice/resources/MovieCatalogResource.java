@@ -36,7 +36,7 @@ public class MovieCatalogResource {
                             .retrieve()
                             .bodyToMono(Movie.class)
                             .block();*/
-                    return new CatalogItem(movie.getName(), "TEST DESCRIPTION "+movie.getMovieId(), rating.getRating());
+                    return new CatalogItem(movie.getName(), movie.getDescription(), rating.getRating());
                 }
         ).collect(Collectors.toList());
 

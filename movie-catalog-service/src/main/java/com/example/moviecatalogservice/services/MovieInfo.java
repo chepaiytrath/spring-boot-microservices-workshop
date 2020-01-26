@@ -8,12 +8,16 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
 
 @Service
 public class MovieInfo {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private WebClient.Builder webClientBuilder;
 
     @HystrixCommand(fallbackMethod = "getFallbackCatalogItem",
     commandProperties = {
@@ -31,3 +35,12 @@ public class MovieInfo {
         return new CatalogItem("Movie name not found", "", rating.getRating());
     }
 }
+
+/*
+Alternate WebClient way:
+Movie movie = webClientBuilder.build()
+                .get()
+                .uri("http://localhost:8082/movies/"+rating.getMovieId())
+                .retrieve()
+                .bodyToMono(Movie.class)
+                .block();*/
